@@ -52,3 +52,24 @@ This test will add units of coffee to the inventory by using the addCoffee metho
 now equal to the previous number of units + the newly added number of units. If equal the test will pass. This test is to show that the addCoffee
 method correctly adds and updates the units of coffee in inventory.
 
+Test for addChocolate method(erroneous input):
+This test will pass a negative integer into the addChocolate method, when the test runs this number should not be added to the chocolate inventory but instead
+should consider the input as an error which is caught in the catch block printing a message relying the error.If the test works in this manner it passes. This
+is to make sure that no negative units of chocolate are ever added to the chocolate inventory.
+
+Test for addMilk method(erroneous input):
+This test will pass a negative integer into the addMilk method, when the test runs this number should not be added to the milk inventory but instead
+should consider the input as an error which is caught in the catch block printing a message relying the error.If the test works in this manner it passes. This
+is to make sure that no negative units of milk are ever added to the milk inventory.
+
+Test for addSugar method(erroneous input):
+This test will pass a negative integer into the addSugar method, when the test runs this number should not be added to the sugar inventory but instead
+should consider the input as an error which is caught in the catch block printing a message relying the error.If the test works in this manner it passes. This
+is to make sure that no negative units of sugar are ever added to the sugar inventory.
+
+Test for addCoffee method(erroneous input):
+This test will pass a negative integer into the addCoffee method, when the test runs this number should not be added to the coffee inventory but instead
+should consider the input as an error which is caught in the catch block printing a message relying the error.If the test works in this manner it passes. This
+is to make sure that no negative units of coffee are ever added to the coffee inventory.
+
+
