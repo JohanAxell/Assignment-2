@@ -1,1 +1,15 @@
+Inventory Class:
+
+Test for the setChocolate Method:
+This test will is done by passing a number of chocolate units into the method and comparing it with that same number,if the method sets the number passed in
+and the two numbers are equal, the test has passed.This is to show that the method does actually set the inputted value as intended.
+
+Test for the getChocolate method:
+This test will is done by passing a number of chocolate units into the method and comparing it with that same number,if the method gets the number passed in
+and the two numbers are equal, the test has passed.This is to show that the method does actually retrieve the inputted value.
+
+Test for addChocolate method:
+This test will for add units of chocolates to the inventory by using the addChocolate method. We will then check if the units of chocolate is
+now equal to the previous number of units + the newly added number of units. If equal the test will pass. This test is to show that the addChocolate
+method correct adds and updates the units of chocolate in inventory.
 
