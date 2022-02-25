@@ -40,3 +40,19 @@ public synchronized void addSugar(String sugar) throws InventoryException {
 			throw new InventoryException("Units of sugar must be a positive integer");
 		}
     }
+    
+    
+    
+InventoryTest.testuseIngredients fails due to line 220 of Inventory.java in which instead of amount of coffee being used deducted from the total amount of   coffee in inventory
+    it is added on. Our solution is as follows:
+    public synchronized boolean useIngredients(Recipe r) {
+    	if (enoughIngredients(r)) {
+	    	Inventory.coffee -= r.getAmtCoffee();
+	    	Inventory.milk -= r.getAmtMilk();
+	    	Inventory.sugar -= r.getAmtSugar();
+	    	Inventory.chocolate -= r.getAmtChocolate();
+	    	return true;
+    	} else {
+    		return false;
+    	}
+    }
