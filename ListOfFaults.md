@@ -43,7 +43,7 @@ Fails:
 ```    
     
     
-4) InventoryTest.testuseIngredients fails due to line 220 of Inventory.java in which instead of amount of coffee being used deducted from the total amount of   coffee in inventory it is added on. Our solution is as follows:
+4) InventoryTest.testuseIngredients fails due to line 220 of Inventory.java in which instead of amount of coffee being used being deducted from the total amount of coffee in inventory it is added on. Our solution is as follows:
 ```
 	public synchronized boolean useIngredients(Recipe r) {
     	if (enoughIngredients(r)) {
