@@ -44,7 +44,8 @@ public synchronized void addSugar(String sugar) throws InventoryException {
     
     
 InventoryTest.testuseIngredients fails due to line 220 of Inventory.java in which instead of amount of coffee being used deducted from the total amount of   coffee in inventory it is added on. Our solution is as follows:
-    public synchronized boolean useIngredients(Recipe r) {
+    
+public synchronized boolean useIngredients(Recipe r) {
     	if (enoughIngredients(r)) {
 	    	Inventory.coffee -= r.getAmtCoffee();
 	    	Inventory.milk -= r.getAmtMilk();
