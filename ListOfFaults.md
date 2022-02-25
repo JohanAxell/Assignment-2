@@ -2,7 +2,7 @@ Fails:
 
 1) CoffeeMakerTest.testEditRecipe, and RecipeBookTest.testEditRecipeExist, failed due to recipebook.editRecipe is faulty. The reason for this may be due to it is changing the updated name to ""(blank). See our solution below:
 
-public synchronized String editRecipe(int recipeToEdit, Recipe newRecipe) {
+	public synchronized String editRecipe(int recipeToEdit, Recipe newRecipe) {
 		if (recipeArray[recipeToEdit] != null) {
 			recipeArray[recipeToEdit] = newRecipe;
 			return recipeArray[recipeToEdit].getName();
@@ -15,7 +15,7 @@ public synchronized String editRecipe(int recipeToEdit, Recipe newRecipe) {
 
 2) CoffeeMakerTest.testAddInventory can not run, due to the incorrect return type given(void instead of Boolean). See our solution below:
 
-public synchronized Boolean addInventory(String amtCoffee, String amtMilk, String amtSugar, String amtChocolate) throws InventoryException {
+	public synchronized Boolean addInventory(String amtCoffee, String amtMilk, String amtSugar, String amtChocolate) throws InventoryException {
 	    inventory.addCoffee(amtCoffee);
 	    inventory.addMilk(amtMilk);
 	    inventory.addSugar(amtSugar);
@@ -27,7 +27,7 @@ public synchronized Boolean addInventory(String amtCoffee, String amtMilk, Strin
 
 3) InventoryTest.testaddSugar fails due to Inventory.addSugar only allows for adding sugar to Inventory.sugar if the received amount of sugar is 0 or less than 0. Our solution can be found below:
 
-public synchronized void addSugar(String sugar) throws InventoryException {
+	public synchronized void addSugar(String sugar) throws InventoryException {
     	int amtSugar = 0;
     	try {
     		amtSugar = Integer.parseInt(sugar);
@@ -45,7 +45,7 @@ public synchronized void addSugar(String sugar) throws InventoryException {
     
 4) InventoryTest.testuseIngredients fails due to line 220 of Inventory.java in which instead of amount of coffee being used deducted from the total amount of   coffee in inventory it is added on. Our solution is as follows:
     
-public synchronized boolean useIngredients(Recipe r) {
+	public synchronized boolean useIngredients(Recipe r) {
     	if (enoughIngredients(r)) {
 	    	Inventory.coffee -= r.getAmtCoffee();
 	    	Inventory.milk -= r.getAmtMilk();
