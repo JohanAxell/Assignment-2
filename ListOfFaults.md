@@ -14,7 +14,7 @@ Fails:
 
 
 2) CoffeeMakerTest.testAddInventory can not run, due to the incorrect return type given(void instead of Boolean). See our solution below:
-
+```
 	public synchronized Boolean addInventory(String amtCoffee, String amtMilk, String amtSugar, String amtChocolate) throws InventoryException {
 	    inventory.addCoffee(amtCoffee);
 	    inventory.addMilk(amtMilk);
@@ -22,11 +22,11 @@ Fails:
 	    inventory.addChocolate(amtChocolate);
         return true;
     }
+```
 
 
-
-3) InventoryTest.testaddSugar fails due to Inventory.addSugar only allows for adding sugar to Inventory.sugar if the received amount of sugar is 0 or less than 0. Our solution can be found below:
-
+3) InventoryTest.testaddSugar fails due to Inventory.addSugar only allows for adding sugar to Inventory.sugar if the received amount of sugar is 0 or less than      0. Our solution can be found below:
+```
 	public synchronized void addSugar(String sugar) throws InventoryException {
     	int amtSugar = 0;
     	try {
@@ -40,11 +40,11 @@ Fails:
 			throw new InventoryException("Units of sugar must be a positive integer");
 		}
     }
-    
+```    
     
     
 4) InventoryTest.testuseIngredients fails due to line 220 of Inventory.java in which instead of amount of coffee being used deducted from the total amount of   coffee in inventory it is added on. Our solution is as follows:
-    
+```
 	public synchronized boolean useIngredients(Recipe r) {
     	if (enoughIngredients(r)) {
 	    	Inventory.coffee -= r.getAmtCoffee();
@@ -56,3 +56,4 @@ Fails:
     		return false;
     	}
     }
+```
