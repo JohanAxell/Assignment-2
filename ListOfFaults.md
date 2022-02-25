@@ -1,7 +1,7 @@
 Fails:
 
 1) CoffeeMakerTest.testEditRecipe, and RecipeBookTest.testEditRecipeExist, failed due to recipebook.editRecipe is faulty. The reason for this may be due to it is changing the updated name to ""(blank). See our solution below:
-
+```
 	public synchronized String editRecipe(int recipeToEdit, Recipe newRecipe) {
 		if (recipeArray[recipeToEdit] != null) {
 			recipeArray[recipeToEdit] = newRecipe;
@@ -10,7 +10,7 @@ Fails:
 			return null;
 		}
 	}
-
+```
 
 
 2) CoffeeMakerTest.testAddInventory can not run, due to the incorrect return type given(void instead of Boolean). See our solution below:
