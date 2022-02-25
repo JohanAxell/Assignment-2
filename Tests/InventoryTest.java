@@ -59,12 +59,8 @@ public class InventoryTest {
     @Test
     public void testAddChocolate_negative() {
         Inventory inv = new Inventory();
-        int firstBite = inv.getChocolate();
-        try {
-            inv.addChocolate("-100");
-        } catch (InventoryException e) {
-            System.out.println("testAddChocolate_negative | ADDING NEGATIVE CHOCOLATE COMPLETE");
-        }
+        assertThrows(InventoryException.class,()->inv.addChocolate("-40"));
+        System.out.println("testAddChocolate_negative | ADDING NEGATIVE CHOCOLATE COMPLETE");
     }
 
     @Test
@@ -98,12 +94,8 @@ public class InventoryTest {
     @Test
     public void testAddCoffee_negative() {
         Inventory inv = new Inventory();
-        int firstSipOfTheDay = inv.getCoffee();
-        try {
-            inv.addCoffee("-50");
-        } catch (InventoryException e) {
-            System.out.println("testAddCoffee_negative | ADDING NEGATIVE COFFEE BALANCE COMPLETED");
-        }
+        assertThrows(InventoryException.class,()->inv.addCoffee("-100"));
+        System.out.println("testAddCoffee_negative | ADDING NEGATIVE COFFEE BALANCE COMPLETED");
     }
 
     @Test
@@ -137,11 +129,8 @@ public class InventoryTest {
     @Test
     public void testAddMilk_negative() {
         Inventory inv = new Inventory();
-        try {
-            inv.addMilk("-30");
-        } catch (InventoryException e) {
-            System.out.println("testAddMilk_negative | ADDED NEGATIVE MILK BALANCE COMPLETED");
-        }
+        assertThrows(InventoryException.class,()->inv.addMilk("-25"));
+        System.out.println("testAddMilk_negative | ADDED NEGATIVE MILK BALANCE COMPLETED");
     }
 
     @Test
@@ -174,11 +163,8 @@ public class InventoryTest {
     @Test
     public void testAddSugar_negative() {
         Inventory inv = new Inventory();
-        try {
-            inv.addSugar("-40");
-        } catch (InventoryException e) {
-            System.out.println("testAddSugar_negative | ADDED NEGATIVE SUGAR BALANCE COMPLETED");
-        }
+        assertThrows(InventoryException.class,()->inv.addSugar("-10"));
+        System.out.println("testAddSugar_negative | ADDED NEGATIVE SUGAR BALANCE COMPLETED");
     }
 
         /*@Test
